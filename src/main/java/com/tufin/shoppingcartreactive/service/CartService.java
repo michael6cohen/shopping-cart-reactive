@@ -40,7 +40,7 @@ public class CartService {
         return cartRepository.findById(cartId)
                 .switchIfEmpty(Mono.error(new IllegalArgumentException("Cart not found: " + cartId)))
                 .flatMap(cart -> {
-                    cart.setItems(new ArrayList<>());   // לא clear() – החלפת אינסטנס
+                    cart.setItems(new ArrayList<>());
                     return cartRepository.save(cart);
                 })
                 .flatMap(saved -> cartRepository.findById(saved.getId()));
