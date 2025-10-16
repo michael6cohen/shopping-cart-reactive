@@ -18,6 +18,6 @@ server:
 logging:
   level:
     root: INFO
-    com.tufin.shoppingcartreactive: DEBUG
+#    com.tufin.shoppingcartreactive: DEBUG
     org.springframework.data.neo4j: INFO
     org.springframework.graphql: INFO
