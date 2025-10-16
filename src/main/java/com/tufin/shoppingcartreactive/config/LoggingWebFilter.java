@@ -1,7 +1,6 @@
 package com.tufin.shoppingcartreactive.config;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -10,12 +9,10 @@ import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
-
+@Slf4j
 @Configuration
 @Order(-1)
 public class LoggingWebFilter implements WebFilter {
-
-    private static final Logger log = LoggerFactory.getLogger(LoggingWebFilter.class);
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
