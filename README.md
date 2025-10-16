@@ -136,6 +136,9 @@ Examples:
 
 ```pgsql
 INFO  Incoming request: POST /graphql
+DEBUG GraphQL request body: {
+ "query": "query { getCart(cartId: 1235) { id items { name count price } } }"
+}
 INFO  got a new item: Apple (count=3, price=2.5)
 INFO  Completed: POST /graphql -> 200 (35 ms)
 ```
