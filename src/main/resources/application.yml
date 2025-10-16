@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: shopping-cart-reactive
+  graphql:
+    graphiql:
+      enabled: true
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: secret123
+  main:
+    web-application-type: reactive
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.tufin.shoppingcartreactive: DEBUG
+    org.springframework.data.neo4j: INFO
+    org.springframework.graphql: INFO

@@ -1,0 +1,27 @@
+type Item {
+  id: ID!
+  name: String!
+}
+
+type Contains {
+  id: ID!
+  item: Item!
+  name: String
+  count: Int!
+  price: Float!
+}
+
+type Cart {
+  id: ID!
+  items: [Contains!]!
+}
+
+type Query {
+  getCart(cartId: ID!): Cart
+}
+
+type Mutation {
+  addItemToCart(cartId: ID!, name: String!, count: Int!, price: Float!): Cart!
+  reduceItemInCart(cartId: ID!, name: String!, count: Int!): Cart!
+  clearCart(cartId: ID!): Cart!
+}
